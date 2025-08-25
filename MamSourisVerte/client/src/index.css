@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(45, 100%, 97%);
+  --foreground: hsl(210, 25%, 25%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(210, 25%, 25%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 25%, 25%);
+  --primary: hsl(130, 61%, 70%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(210, 25%, 25%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(240, 2%, 90%);
+  --muted-foreground: hsl(210, 25%, 25%);
+  --accent: hsl(211, 51%, 92%);
+  --accent-foreground: hsl(130, 61%, 70%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(200, 23%, 97%);
+  --ring: hsl(130, 61%, 70%);
+  --chart-1: hsl(130, 61%, 70%);
+  --chart-2: hsl(160, 100%, 36%);
+  --chart-3: hsl(42, 93%, 56%);
+  --chart-4: hsl(147, 79%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(210, 25%, 25%);
+  --sidebar-primary: hsl(130, 61%, 70%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(211, 51%, 92%);
+  --sidebar-accent-foreground: hsl(130, 61%, 70%);
+  --sidebar-border: hsl(205, 25%, 91%);
+  --sidebar-ring: hsl(130, 61%, 70%);
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --font-nunito: 'Nunito', sans-serif;
+  --radius: 1.3rem;
+  --sage: hsl(130, 61%, 70%);
+  --sky-soft: hsl(213, 71%, 87%);
+  --coral-warm: hsl(0, 74%, 80%);
+  --cream: hsl(45, 100%, 97%);
+  --charcoal: hsl(210, 25%, 25%);
+}
+
+.dark {
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(200, 7%, 91%);
+  --card: hsl(228, 10%, 10%);
+  --card-foreground: hsl(0, 0%, 85%);
+  --popover: hsl(0, 0%, 0%);
+  --popover-foreground: hsl(200, 7%, 91%);
+  --primary: hsl(130, 61%, 70%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(195, 15%, 95%);
+  --secondary-foreground: hsl(210, 25%, 8%);
+  --muted: hsl(0, 0%, 9%);
+  --muted-foreground: hsl(210, 3%, 46%);
+  --accent: hsl(206, 70%, 8%);
+  --accent-foreground: hsl(130, 61%, 70%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 85%, 97%);
+  --border: hsl(210, 5%, 15%);
+  --input: hsl(208, 28%, 18%);
+  --ring: hsl(130, 61%, 70%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground;
+    background-color: var(--cream);
+    color: var(--charcoal);
+  }
+
+  .font-nunito {
+    font-family: var(--font-nunito);
+  }
+
+  .text-sage {
+    color: var(--sage);
+  }
+
+  .text-sky-soft {
+    color: var(--sky-soft);
+  }
+
+  .text-coral-warm {
+    color: var(--coral-warm);
+  }
+
+  .text-charcoal {
+    color: var(--charcoal);
+  }
+
+  .bg-sage {
+    background-color: var(--sage);
+  }
+
+  .bg-sky-soft {
+    background-color: var(--sky-soft);
+  }
+
+  .bg-coral-warm {
+    background-color: var(--coral-warm);
+  }
+
+  .bg-cream {
+    background-color: var(--cream);
+  }
+
+  .bg-charcoal {
+    background-color: var(--charcoal);
+  }
+
+  .border-sage {
+    border-color: var(--sage);
+  }
+
+  .hover\:bg-sage\/90:hover {
+    background-color: hsl(130, 61%, 63%);
+  }
+
+  .focus\:ring-sage:focus {
+    --tw-ring-color: var(--sage);
+  }
+}
+
+@layer components {
+  .tab-button {
+    @apply transition-all duration-300 ease-in-out;
+    background: rgba(134, 239, 172, 0.1);
+    color: var(--charcoal);
+    border: 2px solid transparent;
+  }
+  
+  .tab-button:hover {
+    background: rgba(134, 239, 172, 0.2);
+    transform: translateY(-1px);
+  }
+  
+  .tab-button.active {
+    background-color: var(--sage);
+    color: white;
+    border-color: var(--sage);
+    box-shadow: 0 4px 12px rgba(134, 239, 172, 0.3);
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+}
